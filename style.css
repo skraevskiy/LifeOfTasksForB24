@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body, p, h3, h4, h5, h6 {
+	font-size: 16px;
+	line-height: 21px
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+p, h2, h3, h4, h5, h6 {
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 28px;
+}
+
+h2 {
+	font-size: 18px;
+	line-height: 22px;
+}
+
+select, button {
+	padding: 5px 10px;
+}
+
+.lifeOfTasks {
+	padding: 1%;
+	background-color: #eef2f4;
+}
+
+h1.title {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;
+}
+
+h2.title {
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+.staff_list, .tasks_container {
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.tasks_container {
+	display: flex;
+	align-items: flex-start;
+}
+
+.tasks_list {
+	position: relative;
+	width: 50%;
+	max-height: 500px;
+	flex-grow: 1;
+	overflow-y: auto;
+}
+
+.tasks_list:not(:last-child) {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.tasks_list h2.title {
+	position: sticky;
+	top: 0;
+	background-color: #fff;
+	box-shadow: 0 0 20px #ccc;
+	z-index: 2;
+}
+
+.task_item {
+	position: relative;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #f6f8f9;
+}
+
+.task_title {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	color: #2067b0;
+}
+
+.task_item:hover {
+	background-color: #eef2f4;
+}
+
+.task_item:hover > .task_title {
+	text-decoration: none;
+}
+
+.task_description {
+	display: none;
+	background-color: #fff;
+	box-shadow: 2px 2px 10px #ccc;
+	border-radius: 0 10px 15px 10px;
+	padding: 10px;
+	max-height: 100px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.task_description p {
+	margin-bottom: 0;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.task_item:hover > .task_description {
+	display: block;
+	position: absolute;
+	z-index: 2;
+}
+
+.task_item:last-child:hover > .task_description {
+	top: -60px;
+}
+
+@media (max-width: 768px) {
+	.tasks_container {
+		display: block;
+	}
+	.tasks_list {
+		width: 100%;
+	}
+}
